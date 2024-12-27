@@ -5,7 +5,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { sizes } from '../utils/sizes';
 import { FilterModal } from "../components/FilterModal";
 
-export const SearchScreen = () => {
+export const SearchScreen = ({ categories, selectedCategories }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   return (<Provider>
@@ -23,7 +23,6 @@ export const SearchScreen = () => {
           <Button
             mode="contained-tonal"
             style={{height: sizes.xla, display: 'flex', justifyContent: 'center'}}
-            onPress={() => console.log("Hello!")}
           >
             <MaterialCommunityIcons
               name="tune"
@@ -33,7 +32,7 @@ export const SearchScreen = () => {
         </View>
       </View>
     </View>
-    <FilterModal showFilter="true" />
+    <FilterModal showFilter="true" categories={categories} selectedCategories={selectedCategories} />
     </Provider>);
 }
 

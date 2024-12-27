@@ -7,13 +7,12 @@ import { sizes } from '../utils/sizes';
 import { Checklist } from "./Checklist";
 import { HeaderText } from './HeaderText';
 
-export const FilterModal = ({ showFilter }) => {
-  const tryDict = {"beauty": "Beauty", "technology": "Technology"}
+export const FilterModal = ({ categories, selectedCategories, showFilter }) => {
   return (
     <Portal>
       <Modal visible={showFilter} contentContainerStyle={styles.modal}>
         <HeaderText size={5} color={colors.purpleTwo}>Categories</HeaderText>
-        <Checklist list={tryDict} alreadyCheckedItems={["beauty"]}/>
+        <Checklist list={categories} alreadyCheckedItems={selectedCategories}/>
         <HeaderText size={5} color={colors.purpleTwo}>Price range</HeaderText>
       </Modal>
     </Portal>
