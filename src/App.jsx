@@ -14,10 +14,22 @@ import * as SplashScreen from "expo-splash-screen";
 import { RootStack } from "./components/RootStack";
 
 export default function App() {
-  const [categories, setCategories] = useState({
-    "beauty": "Beauty", "technology": "Technology", "groceries": "Groceries", "clothing": "Clothing"
-  });
-  const [selectedCategories, setSelectedCategories] = useState(["beauty", "groceries"]);
+  const [categories, setCategories] = useState({});
+  const [selectedCategories, setSelectedCategories] = useState(["beauty", "groceries", "kitchen-accessories", "mens-shoes"]);
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    const fetchCategories = async() => {
+      const response = await fetch("https://dummyjson.com/products/categories");
+      const data = await response.json();
+      let processedCategories = {};
+      data.forEach(categoryInfo => {
+        processedCategories[categoryInfo.slug] = categoryInfo.name;
+      });
+      setCategories(processedCategories);
+    };
+    fetchCategories();
+  }, []);
 
   return (
     <NavigationContainer>
