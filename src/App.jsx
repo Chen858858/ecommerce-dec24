@@ -17,7 +17,7 @@ export default function App() {
   // This state stores the categories.
   const [categories, setCategories] = useState({});
   // This state stores the categories that were selected in the filter.
-  const [selectedCategories, setSelectedCategories] = useState(["beauty", "groceries", "kitchen-accessories", "mens-shoes"]);
+  const [selectedCategories, setSelectedCategories] = useState([]);
   // This state stores all the items.
   const [items, setItems] = useState([]);
   // This state stores the filter types open in the filter.
