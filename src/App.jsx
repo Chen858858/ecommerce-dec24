@@ -1,7 +1,7 @@
 // In App.js in a new project
 
 import * as React from "react";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import { View, Text } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -18,6 +18,10 @@ export default function App() {
   const [selectedCategories, setSelectedCategories] = useState(["beauty", "groceries", "kitchen-accessories", "mens-shoes"]);
   const [items, setItems] = useState([]);
 
+  const processSetSelectedCategories = (newSelectedCategories) => {
+    setSelectedCategories(newSelectedCategories);
+  };
+
   useEffect(() => {
     const fetchCategories = async() => {
       const response = await fetch("https://dummyjson.com/products/categories");
@@ -33,7 +37,11 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <RootStack categories={categories} selectedCategories={selectedCategories} />
+      <RootStack
+        categories={categories}
+        selectedCategories={selectedCategories}
+        setSelectedCategories={processSetSelectedCategories}
+      />
     </NavigationContainer>
   );
 }

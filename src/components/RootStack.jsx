@@ -16,7 +16,11 @@ SplashScreen.preventAutoHideAsync();
 
 const Stack = createNativeStackNavigator();
 
-export function RootStack({categories, selectedCategories}) {
+export function RootStack({
+  categories,
+  selectedCategories,
+  setSelectedCategories
+}) {
   // START: This code is for loading the font(s).
   const [loaded, error] = useFonts({
     "Inter-Black": require("../fonts/Gabarito-Regular.ttf")
@@ -54,7 +58,12 @@ export function RootStack({categories, selectedCategories}) {
         options={{
           title: "Item search"
         }}
-        children={(props) => <SearchScreen {...props} categories={categories} selectedCategories={selectedCategories} />}
+        children={(props) =>
+          <SearchScreen {...props}
+            categories={categories}
+            selectedCategories={selectedCategories}
+            setSelectedCategories={setSelectedCategories}
+          />}
       />
     </Stack.Navigator>
   );

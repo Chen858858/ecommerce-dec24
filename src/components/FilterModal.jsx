@@ -7,7 +7,11 @@ import { sizes } from '../utils/sizes';
 import { Checklist } from "./Checklist";
 import { HeaderText } from './HeaderText';
 
-export const FilterModal = ({ categories, selectedCategories, showFilter }) => {
+export const FilterModal = ({
+  categories,
+  selectedCategories,
+  setSelectedCategories,
+  showFilter }) => {
   
   return (
     <Portal>
@@ -15,7 +19,11 @@ export const FilterModal = ({ categories, selectedCategories, showFilter }) => {
         <ScrollView>
           <List.Section title={<HeaderText size={4} color={colors.purpleTwo}>Filters</HeaderText>}>
             <List.Accordion style={styles.filterTypeButton} title={<HeaderText size={5} color={colors.purpleTwo}>Categories</HeaderText>}>
-              <Checklist list={categories} alreadyCheckedItems={selectedCategories}/>
+              <Checklist
+                list={categories}
+                alreadyCheckedItems={selectedCategories}
+                setAlreadyCheckedItems={setSelectedCategories}
+              />
             </List.Accordion>
           </List.Section>
         </ScrollView>

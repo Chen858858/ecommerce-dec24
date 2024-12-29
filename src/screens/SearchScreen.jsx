@@ -5,7 +5,11 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { sizes } from '../utils/sizes';
 import { FilterModal } from "../components/FilterModal";
 
-export const SearchScreen = ({ categories, selectedCategories }) => {
+export const SearchScreen = ({
+  categories,
+  selectedCategories,
+  setSelectedCategories
+}) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   return (<Provider>
@@ -32,7 +36,12 @@ export const SearchScreen = ({ categories, selectedCategories }) => {
         </View>
       </View>
     </View>
-    <FilterModal showFilter="true" categories={categories} selectedCategories={selectedCategories} />
+    <FilterModal
+      showFilter="true"
+      categories={categories}
+      selectedCategories={selectedCategories}
+      setSelectedCategories={setSelectedCategories}
+    />
     </Provider>);
 }
 
