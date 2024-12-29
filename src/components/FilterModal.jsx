@@ -33,8 +33,8 @@ export const FilterModal = ({
             >
               <Checklist
                 list={categories}
-                alreadyCheckedItems={selectedCategories}
-                setAlreadyCheckedItems={setSelectedCategories}
+                checkedItems={selectedCategories}
+                setCheckedItems={setSelectedCategories}
               />
             </List.Accordion>
           </List.Section>

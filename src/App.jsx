@@ -22,7 +22,7 @@ export default function App() {
   const [items, setItems] = useState([]);
   // This state stores the filter types open in the filter.
   const [filterTypesOpen, setFilterTypesOpen] = useState({
-    "categories": true
+    "categories": false
   });
 
   const processSetSelectedCategories = (newSelectedCategories) => {
