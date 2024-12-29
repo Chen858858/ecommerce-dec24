@@ -1,6 +1,6 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
-import { Button, Modal, Portal, PaperProvider } from 'react-native-paper';
+import { ScrollView, StyleSheet, Text, View } from 'react-native'
+import { Button, List, Modal, Portal, PaperProvider } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { colors } from '../utils/colors';
 import { sizes } from '../utils/sizes';
@@ -8,12 +8,17 @@ import { Checklist } from "./Checklist";
 import { HeaderText } from './HeaderText';
 
 export const FilterModal = ({ categories, selectedCategories, showFilter }) => {
+  
   return (
     <Portal>
       <Modal visible={showFilter} contentContainerStyle={styles.modal}>
-        <HeaderText size={5} color={colors.purpleTwo}>Categories</HeaderText>
-        <Checklist list={categories} alreadyCheckedItems={selectedCategories}/>
-        <HeaderText size={5} color={colors.purpleTwo}>Price range</HeaderText>
+        <ScrollView>
+          <List.Section title={<HeaderText size={4} color={colors.purpleTwo}>Filters</HeaderText>}>
+            <List.Accordion style={styles.filterTypeButton} title={<HeaderText size={5} color={colors.purpleTwo}>Categories</HeaderText>}>
+              <Checklist list={categories} alreadyCheckedItems={selectedCategories}/>
+            </List.Accordion>
+          </List.Section>
+        </ScrollView>
       </Modal>
     </Portal>
   )
@@ -26,7 +31,11 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     marginHorizontal: sizes.mda,
     borderRadius: sizes.mdb,
-    justifyContent: "flex-start"
+    justifyContent: "flex-start",
+    overflow: "scroll"
+  },
+  filterTypeButton: {
+    backgroundColor: colors.purpleThree
   }
 })
 
