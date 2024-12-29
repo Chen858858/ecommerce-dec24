@@ -10,15 +10,27 @@ import { HeaderText } from './HeaderText';
 export const FilterModal = ({
   categories,
   selectedCategories,
+  filterTypesOpen,
   setSelectedCategories,
+  setFilterTypesOpen,
   showFilter }) => {
   
   return (
     <Portal>
       <Modal visible={showFilter} contentContainerStyle={styles.modal}>
         <ScrollView>
-          <List.Section title={<HeaderText size={4} color={colors.purpleTwo}>Filters</HeaderText>}>
-            <List.Accordion style={styles.filterTypeButton} title={<HeaderText size={5} color={colors.purpleTwo}>Categories</HeaderText>}>
+          <List.Section title={<HeaderText size={5} color={colors.purpleTwo}>Filters</HeaderText>}>
+            <List.Accordion
+              style={styles.filterTypeButton}
+              expanded={filterTypesOpen["categories"]}
+              title={<HeaderText
+                size={6}
+                color={colors.purpleTwo}>
+                  Categories
+                </HeaderText>
+              }
+              onPress={() => setFilterTypesOpen("categories")}
+            >
               <Checklist
                 list={categories}
                 alreadyCheckedItems={selectedCategories}

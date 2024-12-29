@@ -13,7 +13,7 @@ export const Checklist = ({
 }) => {
   const [checkedItems, setCheckedItems] = useStateWithCallbackLazy(alreadyCheckedItems);
   
-  // Adds or removes a checked item. Also updates the checked item list from parent component(s).
+  // This function adds or removes a checked item. Also updates the checked item list from parent component(s).
   const addDeleteItem = (item) => {
     setCheckedItems(!checkedItems.includes(item) ? [...checkedItems, item] : checkedItems.filter(checkedItem => checkedItem != item),
       (newCheckedItems) => {

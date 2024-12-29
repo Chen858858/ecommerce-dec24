@@ -19,7 +19,9 @@ const Stack = createNativeStackNavigator();
 export function RootStack({
   categories,
   selectedCategories,
-  setSelectedCategories
+  filterTypesOpen,
+  setSelectedCategories,
+  setFilterTypesOpen
 }) {
   // START: This code is for loading the font(s).
   const [loaded, error] = useFonts({
@@ -62,7 +64,9 @@ export function RootStack({
           <SearchScreen {...props}
             categories={categories}
             selectedCategories={selectedCategories}
+            filterTypesOpen={filterTypesOpen}
             setSelectedCategories={setSelectedCategories}
+            setFilterTypesOpen={setFilterTypesOpen}
           />}
       />
     </Stack.Navigator>

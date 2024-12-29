@@ -14,14 +14,29 @@ import * as SplashScreen from "expo-splash-screen";
 import { RootStack } from "./components/RootStack";
 
 export default function App() {
+  // This state stores the categories.
   const [categories, setCategories] = useState({});
+  // This state stores the categories that were selected in the filter.
   const [selectedCategories, setSelectedCategories] = useState(["beauty", "groceries", "kitchen-accessories", "mens-shoes"]);
+  // This state stores all the items.
   const [items, setItems] = useState([]);
+  // This state stores the filter types open in the filter.
+  const [filterTypesOpen, setFilterTypesOpen] = useState({
+    "categories": true
+  });
 
   const processSetSelectedCategories = (newSelectedCategories) => {
     setSelectedCategories(newSelectedCategories);
   };
 
+  // This function takes in a filter type and sets its open status in the filterTypesOpen.
+  const processFilterTypesOpen = (filterType) => {
+    let newFilterTypeOpen = {...filterTypesOpen};
+    newFilterTypeOpen[filterType] = !filterTypesOpen[filterType];
+    setFilterTypesOpen(newFilterTypeOpen);
+  };
+
+  // This effect calls the API to get the categories.
   useEffect(() => {
     const fetchCategories = async() => {
       const response = await fetch("https://dummyjson.com/products/categories");
@@ -40,7 +55,9 @@ export default function App() {
       <RootStack
         categories={categories}
         selectedCategories={selectedCategories}
+        filterTypesOpen={filterTypesOpen}
         setSelectedCategories={processSetSelectedCategories}
+        setFilterTypesOpen={processFilterTypesOpen}
       />
     </NavigationContainer>
   );

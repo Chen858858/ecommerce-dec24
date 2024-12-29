@@ -8,7 +8,9 @@ import { FilterModal } from "../components/FilterModal";
 export const SearchScreen = ({
   categories,
   selectedCategories,
-  setSelectedCategories
+  filterTypesOpen,
+  setSelectedCategories,
+  setFilterTypesOpen
 }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -40,7 +42,9 @@ export const SearchScreen = ({
       showFilter="true"
       categories={categories}
       selectedCategories={selectedCategories}
+      filterTypesOpen={filterTypesOpen}
       setSelectedCategories={setSelectedCategories}
+      setFilterTypesOpen={setFilterTypesOpen}
     />
     </Provider>);
 }
