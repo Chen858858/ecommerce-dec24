@@ -1,11 +1,12 @@
-import React from 'react'
-import { ScrollView, StyleSheet, Text, View } from 'react-native'
-import { Button, List, Modal, Portal, PaperProvider } from 'react-native-paper';
+import React from "react";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { Button, List, Modal, Portal, PaperProvider } from "react-native-paper";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { colors } from '../utils/colors';
-import { sizes } from '../utils/sizes';
+import { colors } from "../utils/colors";
+import { sizes } from "../utils/sizes";
 import { Checklist } from "./Checklist";
-import { HeaderText } from './HeaderText';
+import { HeaderText } from "./HeaderText";
+import { NumberRange } from "./NumberRange";
 
 export const FilterModal = ({
   categories,
@@ -20,6 +21,7 @@ export const FilterModal = ({
       <Modal visible={showFilter} contentContainerStyle={styles.modal}>
         <ScrollView>
           <List.Section title={<HeaderText size={5} color={colors.purpleTwo}>Filters</HeaderText>}>
+            {/* Start filter by categories section. */}
             <List.Accordion
               style={styles.filterTypeButton}
               expanded={filterTypesOpen["categories"]}
@@ -37,6 +39,22 @@ export const FilterModal = ({
                 setCheckedItems={setSelectedCategories}
               />
             </List.Accordion>
+            {/* End filter by categories section. */}
+            {/* Start filter by price range section. */}
+            <List.Accordion
+              style={styles.filterTypeButton}
+              expanded={filterTypesOpen["price"]}
+              title={<HeaderText
+                size={6}
+                color={colors.purpleTwo}>
+                  Price range
+                </HeaderText>
+              }
+              onPress={() => setFilterTypesOpen("price")}
+            >
+              <NumberRange />
+            </List.Accordion>
+            {/* End filter by price range section. */}
           </List.Section>
         </ScrollView>
       </Modal>

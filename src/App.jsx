@@ -22,8 +22,14 @@ export default function App() {
   const [items, setItems] = useState([]);
   // This state stores the filter types open in the filter.
   const [filterTypesOpen, setFilterTypesOpen] = useState({
-    "categories": false
+    "categories": false,
+    "price": true
   });
+
+  // THIS EFFECT IS ONLY FOR TESTING ONLY. It will be deleted at the proper time.
+  useEffect(
+    () => console.log(filterTypesOpen)
+  , [filterTypesOpen]);
 
   const processSetSelectedCategories = (newSelectedCategories) => {
     setSelectedCategories(newSelectedCategories);
