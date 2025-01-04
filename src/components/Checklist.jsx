@@ -6,7 +6,7 @@ import { sizes } from "../utils/sizes";
 // list is in format {value: label}. checkedList is a list that only stores values.
 export const Checklist = ({
   checkedItems = [],
-  list,
+  list = [],
   setCheckedItems
 }) => {
   
