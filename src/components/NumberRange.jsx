@@ -1,21 +1,29 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { TextInput } from "react-native-paper";
+import { colors } from "../utils/colors";
 import { sizes } from "../utils/sizes";
 
 export const NumberRange = ({
-  leftLabel = "",
-  rightLabel = "",
+  leftLabel = "test label left",
+  rightLabel = "test label right",
   leftValue = "",
   rightValue = "",
-  leftIcon = "",
-  rightIcon = "",
+  leftIcon = "lightbulb-outline",
+  rightIcon = "star",
   endingText = "",
   setNumbers,
 }) => {
   return (
-    <View>
-      <TextInput contentStyle={styles.input} />
+    <View style={styles.numberRangeContainer}>
+      <TextInput
+        mode="outlined"
+        style={styles.input}
+        contentStyle={styles.input}
+        label={<Text style={styles.input}>{leftLabel}</Text>}
+        left={leftIcon && <TextInput.Icon icon={leftIcon} />}
+        right={rightIcon && <TextInput.Icon icon={rightIcon} />}
+      />
       <Text style={styles.text}>to</Text>
     </View>
   )
@@ -23,8 +31,14 @@ export const NumberRange = ({
 
 const styles = StyleSheet.create({
   input: {
+    width: 135,
     fontFamily: "Gabarito",
     fontSize: sizes.mdb
+  },
+  numberRangeContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-evenly"
   },
   text: {
     fontFamily: "Gabarito",
@@ -32,4 +46,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default NumberRange
+export default NumberRange;
