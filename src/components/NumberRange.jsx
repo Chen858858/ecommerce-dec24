@@ -4,8 +4,14 @@ import { TextInput } from "react-native-paper";
 import { sizes } from "../utils/sizes";
 
 export const NumberRange = ({
+  leftLabel = "",
+  rightLabel = "",
+  leftValue = "",
+  rightValue = "",
   leftIcon = "",
-  rightIcon = ""
+  rightIcon = "",
+  endingText = "",
+  setNumbers,
 }) => {
   return (
     <View>
