@@ -1,12 +1,29 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
+import { TextInput } from "react-native-paper";
+import { sizes } from "../utils/sizes";
 
-export const NumberRange = () => {
+export const NumberRange = ({
+  leftIcon = "",
+  rightIcon = ""
+}) => {
   return (
     <View>
-      <Text>Hello, this is the price range component.</Text>
+      <TextInput contentStyle={styles.input} />
+      <Text style={styles.text}>to</Text>
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+  input: {
+    fontFamily: "Gabarito",
+    fontSize: sizes.mdb
+  },
+  text: {
+    fontFamily: "Gabarito",
+    fontSize: sizes.mdb
+  }
+});
 
 export default NumberRange
