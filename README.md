@@ -1,3 +1,3 @@
 ## Working on right now ##
-- Number to number component
+- NumberRange component
 - Filter by price input
