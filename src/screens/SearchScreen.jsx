@@ -8,6 +8,7 @@ import { FilterModal } from "../components/FilterModal";
 export const SearchScreen = ({
   categories,
   selectedCategories,
+  priceRange,
   filterTypesOpen,
   setSelectedCategories,
   setFilterTypesOpen
@@ -42,6 +43,7 @@ export const SearchScreen = ({
       showFilter="true"
       categories={categories}
       selectedCategories={selectedCategories}
+      priceRange={priceRange}
       filterTypesOpen={filterTypesOpen}
       setSelectedCategories={setSelectedCategories}
       setFilterTypesOpen={setFilterTypesOpen}

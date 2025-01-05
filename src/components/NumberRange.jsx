@@ -10,8 +10,7 @@ export const NumberRange = ({
   upperLimit = 100,
   minimumLabel = "low value",
   maximumLabel = "high value",
-  minimumValue = "55",
-  maximumValue = "",
+  numberRange = {"minimum": 0, "maximum": 1000},
   leftIcon = "lightbulb-outline",
   rightIcon = "star",
   setNumbers,
@@ -20,7 +19,7 @@ export const NumberRange = ({
     <View style={styles.numberRangeContainer}>
       <NumberRangeInput
         label={minimumLabel}
-        value={minimumValue}
+        value={numberRange["minimum"].toString()}
         rightIcon={rightIcon}
         leftIcon={leftIcon}
       />

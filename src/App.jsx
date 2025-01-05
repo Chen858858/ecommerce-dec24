@@ -16,10 +16,12 @@ import { RootStack } from "./components/RootStack";
 export default function App() {
   // This state stores the categories.
   const [categories, setCategories] = useState({});
-  // This state stores the categories that were selected in the filter.
-  const [selectedCategories, setSelectedCategories] = useState([]);
   // This state stores all the items.
   const [items, setItems] = useState([]);
+  // This state stores the categories that were selected in the filter.
+  const [selectedCategories, setSelectedCategories] = useState([]);
+  // This state stores the filter price range.
+  const [priceRange, setPriceRange] = useState({"minimum": 0.00, "maximum": 1000.00});
   // This state stores the filter types open in the filter.
   const [filterTypesOpen, setFilterTypesOpen] = useState({
     "categories": false,
@@ -31,8 +33,14 @@ export default function App() {
     () => console.log(filterTypesOpen)
   , [filterTypesOpen]);
 
+  // This function processes the new selected categories passed up from the filter.
   const processSetSelectedCategories = (newSelectedCategories) => {
     setSelectedCategories(newSelectedCategories);
+  };
+
+  // This function processes the new price range passed up from the filter.
+  const processSetPriceRange = (newPriceRange) => {
+    setPriceRange(newPriceRange);
   };
 
   // This function takes in a filter type and sets its open status in the filterTypesOpen.
@@ -61,6 +69,7 @@ export default function App() {
       <RootStack
         categories={categories}
         selectedCategories={selectedCategories}
+        priceRange={priceRange}
         filterTypesOpen={filterTypesOpen}
         setSelectedCategories={processSetSelectedCategories}
         setFilterTypesOpen={processFilterTypesOpen}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { TextInput } from "react-native-paper";
 import { colors } from "../utils/colors";
@@ -11,6 +11,7 @@ export const NumberRangeInput = ({
   rightIcon,
   setNumber
 }) => {
+
   return (
     <TextInput
       mode="outlined"

@@ -11,6 +11,7 @@ import { NumberRange } from "./NumberRange";
 export const FilterModal = ({
   categories,
   selectedCategories,
+  priceRange,
   filterTypesOpen,
   setSelectedCategories,
   setFilterTypesOpen,
@@ -52,7 +53,7 @@ export const FilterModal = ({
               }
               onPress={() => setFilterTypesOpen("price")}
             >
-              <NumberRange />
+              <NumberRange numberRange={priceRange} />
             </List.Accordion>
             {/* End filter by price range section. */}
           </List.Section>

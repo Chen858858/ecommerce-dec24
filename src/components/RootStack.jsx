@@ -19,6 +19,7 @@ const Stack = createNativeStackNavigator();
 export function RootStack({
   categories,
   selectedCategories,
+  priceRange,
   filterTypesOpen,
   setSelectedCategories,
   setFilterTypesOpen
@@ -64,6 +65,7 @@ export function RootStack({
           <SearchScreen {...props}
             categories={categories}
             selectedCategories={selectedCategories}
+            priceRange={priceRange}
             filterTypesOpen={filterTypesOpen}
             setSelectedCategories={setSelectedCategories}
             setFilterTypesOpen={setFilterTypesOpen}
