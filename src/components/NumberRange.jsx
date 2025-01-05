@@ -6,8 +6,8 @@ import { sizes } from "../utils/sizes";
 import { NumberRangeInput } from "./NumberRangeInput";
 
 export const NumberRange = ({
-  lowerLimit = 0,
-  upperLimit = 1000,
+  lowerLimit = "0",
+  upperLimit = null,
   minimumLabel = "low value",
   maximumLabel = "high value",
   numberRange = {"minimum": 0, "maximum": 1000},
