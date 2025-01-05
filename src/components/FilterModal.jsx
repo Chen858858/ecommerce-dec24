@@ -73,7 +73,8 @@ const styles = StyleSheet.create({
     overflow: "scroll"
   },
   filterTypeButton: {
-    backgroundColor: colors.purpleThree
+    backgroundColor: colors.purpleThree,
+    marginBottom: 5
   }
 })
 
