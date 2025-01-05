@@ -28,7 +28,7 @@ export default function App() {
     "price": true
   });
 
-  // THIS EFFECT IS ONLY FOR TESTING ONLY. It will be deleted at the proper time.
+  // THIS EFFECT IS ONLY FOR DEBUGGING ONLY. It will be deleted at the proper time.
   useEffect(
     () => console.log(filterTypesOpen)
   , [filterTypesOpen]);
