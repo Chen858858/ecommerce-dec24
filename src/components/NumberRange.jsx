@@ -21,12 +21,21 @@ export const NumberRange = ({
   const setInputValues = () => {
     setMinimumInputValue(numberRange["minimum"].toString());
     setMaximumInputValue(numberRange["maximum"].toString());
-  }
+  };
+
+  const processNewInputValues = () => {
+
+  };
 
   useEffect(() => {
     setInputValues();
   }
-  , []);
+  , [...Object.values(numberRange)]);
+
+  useEffect(() => {
+    processNewInputValues();
+  }
+  , [minimumInputValue, maximumInputValue]);
 
   return (
     <View style={styles.numberRangeContainer}>
