@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { TextInput } from "react-native-paper";
 import { colors } from "../utils/colors";
@@ -7,7 +7,7 @@ import { NumberRangeInput } from "./NumberRangeInput";
 
 export const NumberRange = ({
   lowerLimit = 0,
-  upperLimit = 100,
+  upperLimit = 1000,
   minimumLabel = "low value",
   maximumLabel = "high value",
   numberRange = {"minimum": 0, "maximum": 1000},
@@ -15,13 +15,23 @@ export const NumberRange = ({
   rightIcon = "star",
   setNumbers,
 }) => {
+  const [minimumInputValue, setMinimumInputValue] = useState("");
+  const [maximumInputValue, setMaximumInputValue] = useState("");
+
+  useEffect(() => {
+    setMinimumInputValue(numberRange["minimum"].toString());
+    setMaximumInputValue(numberRange["maximum"].toString());
+  }
+  , [])
+
   return (
     <View style={styles.numberRangeContainer}>
       <NumberRangeInput
         label={minimumLabel}
-        value={numberRange["minimum"].toString()}
+        value={minimumInputValue}
         rightIcon={rightIcon}
         leftIcon={leftIcon}
+        setValue={setMinimumInputValue}
       />
       <Text style={styles.text}>to</Text>
     </View>

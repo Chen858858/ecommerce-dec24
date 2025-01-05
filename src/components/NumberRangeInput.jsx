@@ -9,7 +9,7 @@ export const NumberRangeInput = ({
   value,
   leftIcon,
   rightIcon,
-  setNumber
+  setValue
 }) => {
 
   return (
@@ -21,6 +21,7 @@ export const NumberRangeInput = ({
       value={value}
       left={leftIcon && <TextInput.Icon icon={leftIcon} />}
       right={rightIcon && <TextInput.Icon icon={rightIcon} />}
+      onChangeText={valueText => setValue(valueText)}
     />
   )
 }
