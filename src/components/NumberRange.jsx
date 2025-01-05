@@ -38,6 +38,26 @@ export const NumberRange = ({
       newMaximum = numberRange["maximum"];
     }
 
+    // Converting new maximum and new minimum to numbers.
+    newMinimum = parseFloat(newMinimum);
+    newMaximum = parseFloat(newMaximum);
+
+    // If minimum is less than the lower limit, set minimum to lower limit.
+    if(lowerLimit){
+      lowerLimit = parseFloat(lowerLimit);
+      if(newMinimum < lowerLimit){
+        newMinimum = lowerLimit;
+      }
+    }
+
+    // If maximum is more than the upper limit, set maximum to upper limit.
+    if(upperLimit){
+      upperLimit = parseFloat(upperLimit);
+      if(newMaximum > upperLimit){
+        newMaximum = upperLimit;
+      }
+    }
+
     // THIS CODE IS ONLY FOR DEBUGGING ONLY. It will be deleted at the proper time.
     console.log({newMinimum, newMaximum});
   };
