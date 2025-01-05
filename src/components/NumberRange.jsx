@@ -18,11 +18,15 @@ export const NumberRange = ({
   const [minimumInputValue, setMinimumInputValue] = useState("");
   const [maximumInputValue, setMaximumInputValue] = useState("");
 
-  useEffect(() => {
+  const setInputValues = () => {
     setMinimumInputValue(numberRange["minimum"].toString());
     setMaximumInputValue(numberRange["maximum"].toString());
   }
-  , [])
+
+  useEffect(() => {
+    setInputValues();
+  }
+  , []);
 
   return (
     <View style={styles.numberRangeContainer}>
