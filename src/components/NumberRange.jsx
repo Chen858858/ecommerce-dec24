@@ -6,10 +6,12 @@ import { sizes } from "../utils/sizes";
 import { NumberRangeInput } from "./NumberRangeInput";
 
 export const NumberRange = ({
-  lowerLabel = "low value",
-  higherLabel = "high value",
-  lowerValue = "55",
-  higherValue = "",
+  lowerLimit = 0,
+  upperLimit = 100,
+  minimumLabel = "low value",
+  maximumLabel = "high value",
+  minimumValue = "55",
+  maximumValue = "",
   leftIcon = "lightbulb-outline",
   rightIcon = "star",
   setNumbers,
@@ -17,8 +19,8 @@ export const NumberRange = ({
   return (
     <View style={styles.numberRangeContainer}>
       <NumberRangeInput
-        label={lowerLabel}
-        value={lowerValue}
+        label={minimumLabel}
+        value={minimumValue}
         rightIcon={rightIcon}
         leftIcon={leftIcon}
       />
