@@ -18,7 +18,8 @@
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
     },
     "plugins": [
       "expo-asset",
@@ -30,7 +31,8 @@
         }
       ],
       "react-native-edge-to-edge",
-      "expo-font"
+      "expo-font",
+      "expo-router"
     ]
   }
 }

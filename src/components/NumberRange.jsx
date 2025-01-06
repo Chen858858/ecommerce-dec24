@@ -58,6 +58,12 @@ export const NumberRange = ({
       }
     }
 
+    if(newMinimum > newMaximum){
+      const oldNewMinimum = newMinimum;
+      newMinimum = newMaximum;
+      newMaximum = oldNewMinimum;
+    }
+
     // THIS CODE IS ONLY FOR DEBUGGING ONLY. It will be deleted at the proper time.
     console.log({newMinimum, newMaximum});
   };
