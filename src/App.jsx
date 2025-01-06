@@ -30,8 +30,13 @@ export default function App() {
 
   // THIS EFFECT IS ONLY FOR DEBUGGING ONLY. It will be deleted at the proper time.
   useEffect(
-    () => console.log(filterTypesOpen)
+    () => console.log("In App:", {filterTypesOpen})
   , [filterTypesOpen]);
+
+  // THIS EFFECT IS ONLY FOR DEBUGGING ONLY. It will be deleted at the proper time.
+  useEffect(
+    () => console.log("In App:", {priceRange})
+  , [priceRange]);
 
   // This function processes the new selected categories passed up from the filter.
   const processSetSelectedCategories = (newSelectedCategories) => {
@@ -72,6 +77,7 @@ export default function App() {
         priceRange={priceRange}
         filterTypesOpen={filterTypesOpen}
         setSelectedCategories={processSetSelectedCategories}
+        setPriceRange={processSetPriceRange}
         setFilterTypesOpen={processFilterTypesOpen}
       />
     </NavigationContainer>

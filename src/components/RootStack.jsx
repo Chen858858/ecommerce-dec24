@@ -22,6 +22,7 @@ export function RootStack({
   priceRange,
   filterTypesOpen,
   setSelectedCategories,
+  setPriceRange,
   setFilterTypesOpen
 }) {
   // START: This code is for loading the font(s).
@@ -68,6 +69,7 @@ export function RootStack({
             priceRange={priceRange}
             filterTypesOpen={filterTypesOpen}
             setSelectedCategories={setSelectedCategories}
+            setPriceRange={setPriceRange}
             setFilterTypesOpen={setFilterTypesOpen}
           />}
       />

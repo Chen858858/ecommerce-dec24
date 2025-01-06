@@ -14,6 +14,7 @@ export const FilterModal = ({
   priceRange,
   filterTypesOpen,
   setSelectedCategories,
+  setPriceRange,
   setFilterTypesOpen,
   showFilter }) => {
   
@@ -53,7 +54,11 @@ export const FilterModal = ({
               }
               onPress={() => setFilterTypesOpen("price")}
             >
-              <NumberRange numberRange={priceRange} lowerLimit="0"/>
+              <NumberRange
+                numberRange={priceRange}
+                setNumberRange={setPriceRange}
+                lowerLimit="0"
+              />
             </List.Accordion>
             {/* End filter by price range section. */}
           </List.Section>

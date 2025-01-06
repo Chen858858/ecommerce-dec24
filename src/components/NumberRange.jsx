@@ -13,7 +13,7 @@ export const NumberRange = ({
   numberRange = {"minimum": 0, "maximum": 1000},
   leftIcon = "lightbulb-outline",
   rightIcon = "star",
-  setNumbers
+  setNumberRange
 }) => {
   const [minimumInputValue, setMinimumInputValue] = useState("");
   const [maximumInputValue, setMaximumInputValue] = useState("");
@@ -75,12 +75,14 @@ export const NumberRange = ({
 
     // THIS CODE IS ONLY FOR DEBUGGING ONLY. It will be deleted at the proper time.
     console.log({newMinimum, newMaximum});
+
+    setNumberRange({"minimum": newMinimum, "maximum": newMaximum});
   };
 
   useEffect(() => {
     setInputValues();
   }
-  , [...Object.values(numberRange)]);
+  , []);
 
   useEffect(() => {
     processNewInputValues();

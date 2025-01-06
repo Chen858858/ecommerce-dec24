@@ -11,6 +11,7 @@ export const SearchScreen = ({
   priceRange,
   filterTypesOpen,
   setSelectedCategories,
+  setPriceRange,
   setFilterTypesOpen
 }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -46,6 +47,7 @@ export const SearchScreen = ({
       priceRange={priceRange}
       filterTypesOpen={filterTypesOpen}
       setSelectedCategories={setSelectedCategories}
+      setPriceRange={setPriceRange}
       setFilterTypesOpen={setFilterTypesOpen}
     />
     </Provider>);
