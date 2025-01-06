@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
   input: {
     width: 135,
     fontFamily: "Gabarito",
-    fontSize: sizes.mdb
+    fontSize: sizes.mdb,
   }
 });
 
