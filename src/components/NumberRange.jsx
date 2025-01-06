@@ -42,22 +42,31 @@ export const NumberRange = ({
     newMinimum = parseFloat(newMinimum);
     newMaximum = parseFloat(newMaximum);
 
-    // If minimum is less than the lower limit, set minimum to lower limit.
     if(lowerLimit){
       lowerLimit = parseFloat(lowerLimit);
+      // If minimum is less than the lower limit, set minimum to lower limit.
       if(newMinimum < lowerLimit){
         newMinimum = lowerLimit;
       }
-    }
-
-    // If maximum is more than the upper limit, set maximum to upper limit.
-    if(upperLimit){
-      upperLimit = parseFloat(upperLimit);
-      if(newMaximum > upperLimit){
-        newMaximum = upperLimit;
+      // If maximum is less than the lower limit, set maximum to lower limit.
+      if(newMaximum < lowerLimit){
+        newMaximum = lowerLimit;
       }
     }
 
+    if(upperLimit){
+      upperLimit = parseFloat(upperLimit);
+      // If maximum is more than the upper limit, set maximum to upper limit.
+      if(newMaximum > upperLimit){
+        newMaximum = upperLimit;
+      }
+      // If minimum is more than the upper limit, set minimum to upper limit.
+      if(newMinimum > upperLimit){
+        newMinimum = upperLimit;
+      }
+    }
+
+    // If minimum is more than the maximum, swap them.
     if(newMinimum > newMaximum){
       const oldNewMinimum = newMinimum;
       newMinimum = newMaximum;
