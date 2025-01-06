@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import { Header } from 'react-native/Libraries/NewAppScreen';
 import { sizes } from '../utils/sizes';
 import FontText from './FontText';
 
