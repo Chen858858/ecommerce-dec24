@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
+import OutsidePressHandler from "react-native-outside-press";
 import { TextInput } from "react-native-paper";
 import { colors } from "../utils/colors";
 import { sizes } from "../utils/sizes";
@@ -90,23 +91,25 @@ export const NumberRange = ({
   , [minimumInputValue, maximumInputValue]);
 
   return (
-    <View style={styles.numberRangeContainer}>
-      <NumberRangeInput
-        label={minimumLabel}
-        value={minimumInputValue}
-        rightIcon={rightIcon}
-        leftIcon={leftIcon}
-        setValue={setMinimumInputValue}
-      />
-      <Text style={styles.text}>to</Text>
-      <NumberRangeInput
-        label={maximumLabel}
-        value={maximumInputValue}
-        rightIcon={rightIcon}
-        leftIcon={leftIcon}
-        setValue={setMaximumInputValue}
-      />
-    </View>
+    <OutsidePressHandler onOutsidePress={() => console.log("Pressed outside of number range")}>
+      <View style={styles.numberRangeContainer}>
+        <NumberRangeInput
+          label={minimumLabel}
+          value={minimumInputValue}
+          rightIcon={rightIcon}
+          leftIcon={leftIcon}
+          setValue={setMinimumInputValue}
+        />
+        <Text style={styles.text}>to</Text>
+        <NumberRangeInput
+          label={maximumLabel}
+          value={maximumInputValue}
+          rightIcon={rightIcon}
+          leftIcon={leftIcon}
+          setValue={setMaximumInputValue}
+        />
+      </View>
+    </OutsidePressHandler>
   )
 }
 

@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { View, Text } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { EventProvider } from "react-native-outside-press";
 import { SearchScreen } from "./screens/SearchScreen";
 import { colors } from "./utils/colors";
 import { sizes } from "./utils/sizes";
@@ -70,16 +71,18 @@ export default function App() {
   }, []);
 
   return (
-    <NavigationContainer>
-      <RootStack
-        categories={categories}
-        selectedCategories={selectedCategories}
-        priceRange={priceRange}
-        filterTypesOpen={filterTypesOpen}
-        setSelectedCategories={processSetSelectedCategories}
-        setPriceRange={processSetPriceRange}
-        setFilterTypesOpen={processFilterTypesOpen}
-      />
-    </NavigationContainer>
+    <EventProvider>
+      <NavigationContainer>
+        <RootStack
+          categories={categories}
+          selectedCategories={selectedCategories}
+          priceRange={priceRange}
+          filterTypesOpen={filterTypesOpen}
+          setSelectedCategories={processSetSelectedCategories}
+          setPriceRange={processSetPriceRange}
+          setFilterTypesOpen={processFilterTypesOpen}
+        />
+      </NavigationContainer>
+    </EventProvider>
   );
 }
