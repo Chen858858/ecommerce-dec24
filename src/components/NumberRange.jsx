@@ -91,7 +91,7 @@ export const NumberRange = ({
   , [minimumInputValue, maximumInputValue]);
 
   return (
-    <OutsidePressHandler onOutsidePress={() => console.log("Pressed outside of number range")}>
+    <OutsidePressHandler onOutsidePress={() => setInputValues()}>
       <View style={styles.numberRangeContainer}>
         <NumberRangeInput
           label={minimumLabel}
