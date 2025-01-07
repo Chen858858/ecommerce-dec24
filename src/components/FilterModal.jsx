@@ -55,6 +55,7 @@ export const FilterModal = ({
               onPress={() => setFilterTypesOpen("price")}
             >
               <NumberRange
+                leftIcon="currency-usd"
                 numberRange={priceRange}
                 setNumberRange={setPriceRange}
                 lowerLimit="0"

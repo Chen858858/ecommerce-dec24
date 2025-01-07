@@ -12,8 +12,8 @@ export const NumberRange = ({
   minimumLabel = "low value",
   maximumLabel = "high value",
   numberRange = {"minimum": 0, "maximum": 1000},
-  leftIcon = "map",
-  rightIcon = "star",
+  leftIcon = "",
+  rightIcon = "",
   setNumberRange
 }) => {
   const [minimumInputValue, setMinimumInputValue] = useState("");
