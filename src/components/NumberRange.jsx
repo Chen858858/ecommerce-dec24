@@ -12,7 +12,7 @@ export const NumberRange = ({
   minimumLabel = "low value",
   maximumLabel = "high value",
   numberRange = {"minimum": 0, "maximum": 1000},
-  leftIcon = "lightbulb-outline",
+  leftIcon = "map",
   rightIcon = "star",
   setNumberRange
 }) => {
