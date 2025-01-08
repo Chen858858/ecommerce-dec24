@@ -83,6 +83,11 @@ export default function App() {
 
   // THIS EFFECT IS ONLY FOR DEBUGGING ONLY. It will be deleted at the proper time.
   useEffect(
+    () => console.log("In App:", {searchTerm})
+  , [searchTerm]);
+
+  // THIS EFFECT IS ONLY FOR DEBUGGING ONLY. It will be deleted at the proper time.
+  useEffect(
     () => console.log("In App:", {priceRange})
   , [priceRange]);
 

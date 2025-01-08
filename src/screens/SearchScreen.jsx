@@ -25,6 +25,7 @@ export const SearchScreen = ({
             placeholder="Search for items..."
             style={{height: sizes.xla}}
             inputStyle={{fontFamily: "Gabarito"}}
+            onChangeText={valueText => setSearchTerm(valueText)}
           />
         </View>
         <View>
