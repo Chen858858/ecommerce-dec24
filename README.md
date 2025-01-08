@@ -1,3 +1,3 @@
 ## Working on right now ##
-- Sending search term between App and SearchScreen.
+- Search button.
 - Filtering items.
