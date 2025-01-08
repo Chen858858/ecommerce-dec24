@@ -19,6 +19,10 @@ export default function App() {
   const [categories, setCategories] = useState({});
   // This state stores all the items.
   const [items, setItems] = useState([]);
+  // This state stores the filtered items.
+  const [filterItems, setFilteredItems] = useState([]);
+  // This state stores the page the search is currently on, each page displaying 10 items.
+  const [searchPage, setSearchPage] = useState(0);
   // This state stores the categories that were selected in the filter.
   const [selectedCategories, setSelectedCategories] = useState([]);
   // This state stores the filter price range.
