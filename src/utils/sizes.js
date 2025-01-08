@@ -12,6 +12,7 @@ export const sizes = {
   lgc: 44,
   lgd: 48,
   lge: 52,
+  lgf: 56,
   xla: 60,
   xlb: 68,
   xlc: 74,

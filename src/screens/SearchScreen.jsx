@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { Button, Provider, Searchbar } from 'react-native-paper';
+import { Button, IconButton, Provider, Searchbar } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { sizes } from '../utils/sizes';
 import { FilterModal } from "../components/FilterModal";
@@ -16,6 +16,8 @@ export const SearchScreen = ({
   setPriceRange,
   setFilterTypesOpen
 }) => {
+  const [showFilter, setShowFilter] = useState(false);
+
   return (<Provider>
     <View style={styles.container}>
       <View style={styles.searchContainer}>
@@ -29,20 +31,17 @@ export const SearchScreen = ({
           />
         </View>
         <View>
-          <Button
+          <IconButton
             mode="contained-tonal"
-            style={{height: sizes.xla, display: 'flex', justifyContent: 'center'}}
-          >
-            <MaterialCommunityIcons
-              name="tune"
-              size={sizes.mdc}
-            />
-          </Button>
+            icon="tune"
+            style={styles.openFilterButton}
+            onPress={() => setShowFilter(true)}
+          />
         </View>
       </View>
     </View>
     <FilterModal
-      // showFilter="true"
+      showFilter={showFilter}
       categories={categories}
       selectedCategories={selectedCategories}
       priceRange={priceRange}
@@ -59,9 +58,14 @@ const styles = StyleSheet.create({
     padding: sizes.smb,
     paddingTop: sizes.mda,
   },
+  openFilterButton: {
+    width: sizes.lgf,
+    height: sizes.lgf
+  },
   searchContainer: {
     flexDirection: "row",
     justifyContent: "space-around",
+    alignItems: "center"
   }
 });
 
