@@ -18,9 +18,11 @@ const Stack = createNativeStackNavigator();
 
 export function RootStack({
   categories,
+  searchTerm,
   selectedCategories,
   priceRange,
   filterTypesOpen,
+  setSearchTerm,
   setSelectedCategories,
   setPriceRange,
   setFilterTypesOpen
@@ -64,10 +66,12 @@ export function RootStack({
         }}
         children={(props) =>
           <SearchScreen {...props}
+            searchTerm={searchTerm}
             categories={categories}
             selectedCategories={selectedCategories}
             priceRange={priceRange}
             filterTypesOpen={filterTypesOpen}
+            setSearchTerm={setSearchTerm}
             setSelectedCategories={setSelectedCategories}
             setPriceRange={setPriceRange}
             setFilterTypesOpen={setFilterTypesOpen}

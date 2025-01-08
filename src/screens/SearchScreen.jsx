@@ -7,15 +7,15 @@ import { FilterModal } from "../components/FilterModal";
 
 export const SearchScreen = ({
   categories,
+  searchTerm,
   selectedCategories,
   priceRange,
   filterTypesOpen,
+  setSearchTerm,
   setSelectedCategories,
   setPriceRange,
   setFilterTypesOpen
 }) => {
-  const [searchTerm, setSearchTerm] = useState("");
-
   return (<Provider>
     <View style={styles.container}>
       <View style={styles.searchContainer}>
@@ -41,7 +41,7 @@ export const SearchScreen = ({
       </View>
     </View>
     <FilterModal
-      showFilter="true"
+      // showFilter="true"
       categories={categories}
       selectedCategories={selectedCategories}
       priceRange={priceRange}

@@ -23,6 +23,8 @@ export default function App() {
   const [filterItems, setFilteredItems] = useState([]);
   // This state stores the page the search is currently on, each page displaying 10 items.
   const [searchPage, setSearchPage] = useState(0);
+  // This state stores the search term.
+  const [searchTerm, setSearchTerm] = useState("");
   // This state stores the categories that were selected in the filter.
   const [selectedCategories, setSelectedCategories] = useState([]);
   // This state stores the filter price range.
@@ -32,16 +34,6 @@ export default function App() {
     "categories": false,
     "price": true
   });
-
-  // THIS EFFECT IS ONLY FOR DEBUGGING ONLY. It will be deleted at the proper time.
-  useEffect(
-    () => console.log("In App:", {filterTypesOpen})
-  , [filterTypesOpen]);
-
-  // THIS EFFECT IS ONLY FOR DEBUGGING ONLY. It will be deleted at the proper time.
-  useEffect(
-    () => console.log("In App:", {priceRange})
-  , [priceRange]);
 
   // This function processes the new selected categories passed up from the filter.
   const processSetSelectedCategories = (newSelectedCategories) => {
@@ -84,14 +76,26 @@ export default function App() {
     fetchItems();
   }, [])
 
+  // THIS EFFECT IS ONLY FOR DEBUGGING ONLY. It will be deleted at the proper time.
+  useEffect(
+    () => console.log("In App:", {filterTypesOpen})
+  , [filterTypesOpen]);
+
+  // THIS EFFECT IS ONLY FOR DEBUGGING ONLY. It will be deleted at the proper time.
+  useEffect(
+    () => console.log("In App:", {priceRange})
+  , [priceRange]);
+
   return (
     <EventProvider>
       <NavigationContainer>
         <RootStack
+          searchTerm={searchTerm}
           categories={categories}
           selectedCategories={selectedCategories}
           priceRange={priceRange}
           filterTypesOpen={filterTypesOpen}
+          setSearchTerm={setSearchTerm}
           setSelectedCategories={processSetSelectedCategories}
           setPriceRange={processSetPriceRange}
           setFilterTypesOpen={processFilterTypesOpen}
