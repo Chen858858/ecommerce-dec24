@@ -70,6 +70,16 @@ export default function App() {
     fetchCategories();
   }, []);
 
+  // This effect calls the API to get the items.
+  useEffect(() => {
+    const fetchItems = async() => {
+      const response = await fetch("https://dummyjson.com/products?limit=0");
+      const data = await response.json();
+      setItems(data["products"]);
+    };
+    fetchItems();
+  }, [])
+
   return (
     <EventProvider>
       <NavigationContainer>
