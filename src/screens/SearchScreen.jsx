@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet } from "react-native";
-import { Button, IconButton, Provider, Searchbar } from "react-native-paper";
+import { Button, Icon, IconButton, Provider, Searchbar } from "react-native-paper";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { colors } from "../utils/colors";
 import { sizes } from "../utils/sizes";
 import { FilterModal } from "../components/FilterModal";
 
@@ -39,6 +40,16 @@ export const SearchScreen = ({
           />
         </View>
       </View>
+      <Button
+        mode="contained"
+        buttonColor={colors.purpleOne}
+        onPress={() => {}}
+      >
+        <View style={styles.searchButtonInside}>
+          <Icon source="magnify" size={sizes.mdb} color={colors.white} />
+          <Text style={styles.searchButtonText}>Search</Text>
+        </View>
+      </Button>
     </View>
     <FilterModal
       showFilter={showFilter}
@@ -63,10 +74,22 @@ const styles = StyleSheet.create({
     width: sizes.lgf,
     height: sizes.lgf
   },
-  searchContainer: {
+  searchButtonInside: {
+    width: 100,
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center"
+  },
+  searchButtonText: {
+    fontFamily: "Gabarito",
+    fontSize: sizes.mdb,
+    color: colors.white
+  },
+  searchContainer: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
+    marginBottom: 5
   }
 });
 
