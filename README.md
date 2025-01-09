@@ -1,4 +1,5 @@
 ## Working on right now ##
 - Search button.
 - Filtering items.
-- Filter modal on and off.
+- FilterModal on and off.
+- Button in FilterModal to turn it off.
