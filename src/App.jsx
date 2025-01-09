@@ -35,16 +35,6 @@ export default function App() {
     "price": true
   });
 
-  // This function processes the new selected categories passed up from the filter.
-  const processSetSelectedCategories = (newSelectedCategories) => {
-    setSelectedCategories(newSelectedCategories);
-  };
-
-  // This function processes the new price range passed up from the filter.
-  const processSetPriceRange = (newPriceRange) => {
-    setPriceRange(newPriceRange);
-  };
-
   // This function takes in a filter type and sets its open status in the filterTypesOpen.
   const processFilterTypesOpen = (filterType) => {
     let newFilterTypeOpen = {...filterTypesOpen};
@@ -88,6 +78,11 @@ export default function App() {
 
   // THIS EFFECT IS ONLY FOR DEBUGGING ONLY. It will be deleted at the proper time.
   useEffect(
+    () => console.log("In App:", {selectedCategories})
+  , [selectedCategories]);
+
+  // THIS EFFECT IS ONLY FOR DEBUGGING ONLY. It will be deleted at the proper time.
+  useEffect(
     () => console.log("In App:", {priceRange})
   , [priceRange]);
 
@@ -101,8 +96,8 @@ export default function App() {
           priceRange={priceRange}
           filterTypesOpen={filterTypesOpen}
           setSearchTerm={setSearchTerm}
-          setSelectedCategories={processSetSelectedCategories}
-          setPriceRange={processSetPriceRange}
+          setSelectedCategories={setSelectedCategories}
+          setPriceRange={setPriceRange}
           setFilterTypesOpen={processFilterTypesOpen}
         />
       </NavigationContainer>
