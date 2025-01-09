@@ -42,6 +42,7 @@ export const SearchScreen = ({
     </View>
     <FilterModal
       showFilter={showFilter}
+      setShowFilter={setShowFilter}
       categories={categories}
       selectedCategories={selectedCategories}
       priceRange={priceRange}

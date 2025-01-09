@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { Button, List, Modal, Portal, PaperProvider } from "react-native-paper";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -8,6 +8,8 @@ import { Checklist } from "./Checklist";
 import { HeaderText } from "./HeaderText";
 import { NumberRange } from "./NumberRange";
 
+// NOTE: To make FilterModal not flicker, modify Paper's Modal component with code at https://github.com/callstack/react-native-paper/issues/4140 by Qyokizzzz. This is not stored in the repository.
+
 export const FilterModal = ({
   categories,
   selectedCategories,
@@ -16,11 +18,17 @@ export const FilterModal = ({
   setSelectedCategories,
   setPriceRange,
   setFilterTypesOpen,
-  showFilter }) => {
-  
+  showFilter,
+  setShowFilter
+}) => {
+
   return (
     <Portal>
-      <Modal visible={showFilter} contentContainerStyle={styles.modal}>
+      <Modal
+        visible={showFilter}
+        contentContainerStyle={styles.modal}
+        onDismiss={() => setShowFilter(false)}
+      >
         <ScrollView>
           <List.Section title={<HeaderText size={5} color={colors.purpleTwo}>Filters</HeaderText>}>
             {/* Start filter by categories section. */}
