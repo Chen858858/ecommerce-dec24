@@ -9,8 +9,8 @@ import { NumberRangeInput } from "./NumberRangeInput";
 export const NumberRange = ({
   lowerLimit = null,
   upperLimit = null,
-  minimumLabel = "low value",
-  maximumLabel = "high value",
+  minimumLabel = "",
+  maximumLabel = "",
   numberRange = {"minimum": 0, "maximum": 1000},
   leftIcon = "",
   rightIcon = "",

@@ -63,6 +63,8 @@ export const FilterModal = ({
             >
               <NumberRange
                 leftIcon="currency-usd"
+                minimumLabel="Min price"
+                maximumLabel="Max price"
                 numberRange={priceRange}
                 setNumberRange={setPriceRange}
                 lowerLimit="0"

@@ -46,7 +46,7 @@ export const NumberRangeInput = ({
         mode="outlined"
         style={styles.input}
         contentStyle={styles.input}
-        label={<Text style={styles.input}>{label}</Text>}
+        label={label ? <Text style={styles.input}>{label}</Text> : ""}
         value={value}
         onChangeText={valueText => setValue(valueText)}
       />
