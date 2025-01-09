@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
-import { Button, List, Modal, Portal, PaperProvider } from "react-native-paper";
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Button, Icon, List, Modal, Portal, PaperProvider } from "react-native-paper";
 import { colors } from "../utils/colors";
 import { sizes } from "../utils/sizes";
 import { Checklist } from "./Checklist";
@@ -29,8 +28,8 @@ export const FilterModal = ({
         contentContainerStyle={styles.modal}
         onDismiss={() => setShowFilter(false)}
       >
-        <ScrollView>
-          <List.Section title={<HeaderText size={5} color={colors.purpleTwo}>Filters</HeaderText>}>
+        <List.Section style={{flex: 0.95}} title={<HeaderText size={5} color={colors.purpleTwo}>Filters</HeaderText>}>
+          <ScrollView>
             {/* Start filter by categories section. */}
             <List.Accordion
               style={styles.filterTypeButton}
@@ -70,27 +69,47 @@ export const FilterModal = ({
               />
             </List.Accordion>
             {/* End filter by price range section. */}
-          </List.Section>
-        </ScrollView>
+          </ScrollView>
+        </List.Section>
+        <Button
+          mode="contained"
+          buttonColor={colors.red}
+          onPress={() => setShowFilter(false)}
+        >
+          <View style={styles.closeModalButtonInside}>
+            <Icon source="close" size={sizes.mdb} color={colors.white} />
+            <Text style={styles.closeModalButtonText}>Close Filters</Text>
+          </View>
+        </Button>
       </Modal>
     </Portal>
   )
 }
 
 const styles = StyleSheet.create({
+  closeModalButtonInside: {
+    width: 150,
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center"
+  },
+  closeModalButtonText: {
+    fontFamily: "Gabarito",
+    fontSize: sizes.mdb,
+    color: colors.white
+  },
+  filterTypeButton: {
+    backgroundColor: colors.purpleThree,
+    marginBottom: 5
+  },
   modal: {
     height: sizes.hge,
     padding: sizes.smb,
     backgroundColor: colors.white,
     marginHorizontal: sizes.mda,
     borderRadius: sizes.mdb,
-    justifyContent: "flex-start",
-    overflow: "scroll"
+    justifyContent: "space-between",
   },
-  filterTypeButton: {
-    backgroundColor: colors.purpleThree,
-    marginBottom: 5
-  }
 })
 
-export default FilterModal
+export default FilterModal;

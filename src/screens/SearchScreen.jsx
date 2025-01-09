@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { Button, IconButton, Provider, Searchbar } from 'react-native-paper';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { sizes } from '../utils/sizes';
+import React, { useState } from "react";
+import { View, Text, StyleSheet } from "react-native";
+import { Button, IconButton, Provider, Searchbar } from "react-native-paper";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { sizes } from "../utils/sizes";
 import { FilterModal } from "../components/FilterModal";
 
 export const SearchScreen = ({
