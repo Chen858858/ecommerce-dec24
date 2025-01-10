@@ -11,6 +11,7 @@ export const SearchScreen = ({
   searchTerm,
   selectedCategories,
   priceRange,
+  filterItems,
   filterTypesOpen,
   setSearchTerm,
   setSelectedCategories,
@@ -43,7 +44,7 @@ export const SearchScreen = ({
       <Button
         mode="contained"
         buttonColor={colors.purpleOne}
-        onPress={() => {}}
+        onPress={() => filterItems()}
       >
         <View style={styles.searchButtonInside}>
           <Icon source="magnify" size={sizes.mdb} color={colors.white} />

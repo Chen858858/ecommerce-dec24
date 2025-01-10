@@ -80,32 +80,32 @@ export default function App() {
     filterItems();
   }, [items]);
 
-  // THIS EFFECT IS ONLY FOR DEBUGGING ONLY. It will be deleted at the proper time.
+  // THIS EFFECT IS FOR DEBUGGING ONLY. It will be deleted at the proper time.
   useEffect(
     () => console.log("In App:", {filterTypesOpen})
   , [filterTypesOpen]);
 
-  // THIS EFFECT IS ONLY FOR DEBUGGING ONLY. It will be deleted at the proper time.
+  // THIS EFFECT IS FOR DEBUGGING ONLY. It will be deleted at the proper time.
   useEffect(
     () => console.log("In App:", {searchTerm})
   , [searchTerm]);
 
-  // THIS EFFECT IS ONLY FOR DEBUGGING ONLY. It will be deleted at the proper time.
+  // THIS EFFECT IS FOR DEBUGGING ONLY. It will be deleted at the proper time.
   useEffect(
     () => console.log("In App:", {selectedCategories})
   , [selectedCategories]);
 
-  // THIS EFFECT IS ONLY FOR DEBUGGING ONLY. It will be deleted at the proper time.
+  // THIS EFFECT IS FOR DEBUGGING ONLY. It will be deleted at the proper time.
   useEffect(
     () => console.log("In App:", {priceRange})
   , [priceRange]);
 
-  // THIS EFFECT IS ONLY FOR DEBUGGING ONLY. It will be deleted at the proper time.
+  // THIS EFFECT IS FOR DEBUGGING ONLY. It will be deleted at the proper time.
   // useEffect(
   //   () => console.log("In App:", {filteredItems})
   // , [filteredItems]);
 
-  // THIS EFFECT IS ONLY FOR DEBUGGING ONLY. It will be deleted at the proper time.
+  // THIS EFFECT IS FOR DEBUGGING ONLY. It will be deleted at the proper time.
   // useEffect(
   //   () => console.log("In App:", {items})
   // , [items]);
@@ -118,6 +118,7 @@ export default function App() {
           categories={categories}
           selectedCategories={selectedCategories}
           priceRange={priceRange}
+          filterItems={filterItems}
           filterTypesOpen={filterTypesOpen}
           setSearchTerm={setSearchTerm}
           setSelectedCategories={setSelectedCategories}

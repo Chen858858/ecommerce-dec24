@@ -21,6 +21,7 @@ export function RootStack({
   searchTerm,
   selectedCategories,
   priceRange,
+  filterItems,
   filterTypesOpen,
   setSearchTerm,
   setSelectedCategories,
@@ -70,6 +71,7 @@ export function RootStack({
             categories={categories}
             selectedCategories={selectedCategories}
             priceRange={priceRange}
+            filterItems={filterItems}
             filterTypesOpen={filterTypesOpen}
             setSearchTerm={setSearchTerm}
             setSelectedCategories={setSelectedCategories}
