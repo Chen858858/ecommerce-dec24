@@ -7,6 +7,8 @@ import { sizes } from "../utils/sizes";
 import { FilterModal } from "../components/FilterModal";
 
 export const SearchScreen = ({
+  filteredItems,
+  searchPage,
   categories,
   searchTerm,
   selectedCategories,

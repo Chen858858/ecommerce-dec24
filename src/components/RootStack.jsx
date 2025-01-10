@@ -17,6 +17,8 @@ SplashScreen.preventAutoHideAsync();
 const Stack = createNativeStackNavigator();
 
 export function RootStack({
+  filteredItems,
+  searchPage,
   categories,
   searchTerm,
   selectedCategories,
@@ -67,6 +69,8 @@ export function RootStack({
         }}
         children={(props) =>
           <SearchScreen {...props}
+            filteredItems={filteredItems}
+            searchPage={searchPage}
             searchTerm={searchTerm}
             categories={categories}
             selectedCategories={selectedCategories}
