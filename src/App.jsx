@@ -37,7 +37,10 @@ export default function App() {
 
   // This function filters the items.
   const filterItems = () => {
-    let newFilteredItems = items.map(item => ({...item}));
+    let newFilteredItems = items.map(item => ({...item})).filter(item => 
+      // Filter by search term.
+      (item["title"].toLowerCase().includes(searchTerm.toLowerCase()) || item["brand"].toLowerCase().includes(searchTerm.toLowerCase()))
+    );
     setFilteredItems(newFilteredItems);
   };
 
@@ -69,6 +72,9 @@ export default function App() {
       const data = await response.json();
       data["products"].forEach(item => {
         item["discountPrice"] = parseFloat((Math.round(item["price"] * (100 - item["discountPercentage"])) / 100).toFixed(2));
+        if(!("brand" in item)){
+          item["brand"] = "";
+        }
       });
       setItems(data["products"]);
     };
