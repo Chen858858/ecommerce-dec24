@@ -37,7 +37,8 @@ export default function App() {
 
   // This function filters the items.
   const filterItems = () => {
-    
+    let newFilteredItems = items.map(item => ({...item}));
+    setFilteredItems(newFilteredItems);
   };
 
   // This function takes in a filter type and sets its open status in the filterTypesOpen.
@@ -74,6 +75,11 @@ export default function App() {
     fetchItems();
   }, []);
 
+  // This effect sets the filtered items after items has been fetched.
+  useEffect(() => {
+    filterItems();
+  }, [items]);
+
   // THIS EFFECT IS ONLY FOR DEBUGGING ONLY. It will be deleted at the proper time.
   useEffect(
     () => console.log("In App:", {filterTypesOpen})
@@ -93,6 +99,11 @@ export default function App() {
   useEffect(
     () => console.log("In App:", {priceRange})
   , [priceRange]);
+
+  // THIS EFFECT IS ONLY FOR DEBUGGING ONLY. It will be deleted at the proper time.
+  // useEffect(
+  //   () => console.log("In App:", {filteredItems})
+  // , [filteredItems]);
 
   // THIS EFFECT IS ONLY FOR DEBUGGING ONLY. It will be deleted at the proper time.
   // useEffect(
