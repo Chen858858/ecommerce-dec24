@@ -20,7 +20,7 @@ export default function App() {
   // This state stores all the items.
   const [items, setItems] = useState([]);
   // This state stores the filtered items.
-  const [filterItems, setFilteredItems] = useState([]);
+  const [filteredItems, setFilteredItems] = useState([]);
   // This state stores the page the search is currently on, each page displaying 10 items.
   const [searchPage, setSearchPage] = useState(0);
   // This state stores the search term.
@@ -34,6 +34,11 @@ export default function App() {
     "categories": false,
     "price": true
   });
+
+  // This function filters the items.
+  const filterItems = () => {
+
+  };
 
   // This function takes in a filter type and sets its open status in the filterTypesOpen.
   const processFilterTypesOpen = (filterType) => {
@@ -64,7 +69,7 @@ export default function App() {
       setItems(data["products"]);
     };
     fetchItems();
-  }, [])
+  }, []);
 
   // THIS EFFECT IS ONLY FOR DEBUGGING ONLY. It will be deleted at the proper time.
   useEffect(
