@@ -37,7 +37,7 @@ export default function App() {
 
   // This function filters the items.
   const filterItems = () => {
-
+    
   };
 
   // This function takes in a filter type and sets its open status in the filterTypesOpen.
@@ -66,6 +66,9 @@ export default function App() {
     const fetchItems = async() => {
       const response = await fetch("https://dummyjson.com/products?limit=0");
       const data = await response.json();
+      data["products"].forEach(item => {
+        item["discountPrice"] = parseFloat((Math.round(item["price"] * (100 - item["discountPercentage"])) / 100).toFixed(2));
+      });
       setItems(data["products"]);
     };
     fetchItems();
@@ -90,6 +93,11 @@ export default function App() {
   useEffect(
     () => console.log("In App:", {priceRange})
   , [priceRange]);
+
+  // THIS EFFECT IS ONLY FOR DEBUGGING ONLY. It will be deleted at the proper time.
+  // useEffect(
+  //   () => console.log("In App:", {items})
+  // , [items]);
 
   return (
     <EventProvider>
