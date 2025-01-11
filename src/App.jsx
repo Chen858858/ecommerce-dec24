@@ -42,7 +42,10 @@ export default function App() {
       (item["title"].toLowerCase().includes(searchTerm.toLowerCase()) || item["brand"].toLowerCase().includes(searchTerm.toLowerCase()))
       &&
       // Filter by categories.
-      selectedCategories.indexOf(item["category"]) != -1
+      (selectedCategories.indexOf(item["category"]) != -1 || selectedCategories.length == 0)
+      &&
+      // Filter by price range.
+      (item["discountPrice"] >= priceRange["minimum"] && item["discountPrice"] <= priceRange["maximum"])
     );
     setFilteredItems(newFilteredItems);
   };
