@@ -40,6 +40,9 @@ export default function App() {
     let newFilteredItems = items.map(item => ({...item})).filter(item => 
       // Filter by search term.
       (item["title"].toLowerCase().includes(searchTerm.toLowerCase()) || item["brand"].toLowerCase().includes(searchTerm.toLowerCase()))
+      &&
+      // Filter by categories.
+      selectedCategories.indexOf(item["category"]) != -1
     );
     setFilteredItems(newFilteredItems);
   };
