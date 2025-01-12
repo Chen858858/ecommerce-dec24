@@ -5,6 +5,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { colors } from "../utils/colors";
 import { sizes } from "../utils/sizes";
 import { FilterModal } from "../components/FilterModal";
+import { SearchItem } from "../components/SearchItem";
 
 export const SearchScreen = ({
   filteredItems,
@@ -53,6 +54,13 @@ export const SearchScreen = ({
           <Text style={styles.searchButtonText}>Search</Text>
         </View>
       </Button>
+      <View>
+        {filteredItems.map((item, index) => {
+          return <View key={index} style={{marginBottom: 10}}> 
+            <SearchItem item={item} />
+          </View>;
+        })}
+      </View>
     </View>
     <FilterModal
       showFilter={showFilter}

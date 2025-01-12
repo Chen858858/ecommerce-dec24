@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text } from "react-native";
 
-const SearchItem = ({ item }) => {
+export const SearchItem = ({ item }) => {
   return (
     <View>
       <Text>Title: {item["title"]}</Text>
