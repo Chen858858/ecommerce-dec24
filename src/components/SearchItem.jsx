@@ -1,14 +1,22 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
+import { Card } from "react-native-paper";
+import { sizes } from "../utils/sizes";
 
 export const SearchItem = ({ item }) => {
   return (
-    <View>
+    <Card style={styles.searchItemContainer}>
       <Text>Title: {item["title"]}</Text>
       <Text>Category: {item["category"]}</Text>
       <Text>Price: {item["price"]}</Text>
-    </View>
+    </Card>
   );
 };
+
+const styles = StyleSheet.create({
+  searchItemContainer: {
+    padding: sizes.smc
+  }
+});
 
 export default SearchItem;
