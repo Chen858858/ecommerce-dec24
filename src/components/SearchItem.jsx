@@ -3,7 +3,11 @@ import { View, Text } from "react-native";
 
 const SearchItem = ({ item }) => {
   return (
-
+    <View>
+      <Text>Title: {item["title"]}</Text>
+      <Text>Category: {item["category"]}</Text>
+      <Text>Price: {item["price"]}</Text>
+    </View>
   );
 };
 
