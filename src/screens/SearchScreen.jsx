@@ -74,7 +74,7 @@ export const SearchScreen = ({
       setFilterTypesOpen={setFilterTypesOpen}
     />
     </Provider>);
-}
+};
 
 const styles = StyleSheet.create({
   container: {
