@@ -1,4 +1,5 @@
 export const colors = {
+  gold: "#d4af37",
   gray: "#f0f0f0",
   purple: "#6000c0",
   purpleTwo: "#8810ff",
