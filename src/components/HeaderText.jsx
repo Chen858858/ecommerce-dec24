@@ -18,6 +18,8 @@ export const HeaderText = ({
     4: sizes.lga,
     5: sizes.mde,
     6: sizes.mdd,
+    7: sizes.mdc,
+    8: sizes.mdb
   }
   
   return (
@@ -35,15 +37,7 @@ export const HeaderText = ({
         </Text>
       </FontText>
     </View>
-  )
-}
-
-// HeaderText.defaultProps = {
-//   size: 4,
-//   color: "#000000",
-//   isBold: true,
-//   isUnderlined: false,
-//   isItalics: false
-// }
+  );
+};
 
 export default HeaderText;

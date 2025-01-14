@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { ScrollView, StyleSheet, View, Text } from "react-native";
 import { Button, Icon, IconButton, Provider, Searchbar } from "react-native-paper";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { colors } from "../utils/colors";
@@ -54,13 +54,13 @@ export const SearchScreen = ({
           <Text style={styles.searchButtonText}>Search</Text>
         </View>
       </Button>
-      <View>
+      <ScrollView style={styles.searchItemsContainerOutside} contentContainerStyle={styles.searchItemsContainerInside}>
         {filteredItems.map((item, index) => {
           return <View key={index} style={{marginBottom: 10}}> 
             <SearchItem item={item} />
           </View>;
         })}
-      </View>
+      </ScrollView>
     </View>
     <FilterModal
       showFilter={showFilter}
@@ -101,6 +101,14 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     alignItems: "center",
     marginBottom: 5
+  },
+  searchItemsContainerInside: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    flexWrap: "wrap"
+  },
+  searchItemsContainerOutside: {
+    marginTop: sizes.smc
   }
 });
 
