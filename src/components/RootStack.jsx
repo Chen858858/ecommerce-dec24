@@ -7,7 +7,6 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { SearchScreen } from "../screens/SearchScreen";
 import { colors } from "../utils/colors";
-import { sizes } from "../utils/sizes";
 import { PaperProvider } from "react-native-paper";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
@@ -57,7 +56,7 @@ export function RootStack({
         headerTitleAlign: "center",
         headerTitleStyle: {
           fontFamily: "Gabarito",
-          fontSize: sizes.mdd,
+          fontSize: 28,
           fontWeight: "bold"
         }
       }}

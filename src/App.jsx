@@ -8,7 +8,6 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { EventProvider } from "react-native-outside-press";
 import { SearchScreen } from "./screens/SearchScreen";
 import { colors } from "./utils/colors";
-import { sizes } from "./utils/sizes";
 import { PaperProvider } from "react-native-paper";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";

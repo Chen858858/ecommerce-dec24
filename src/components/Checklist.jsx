@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { StyleSheet, View, Text, TouchableHighlight, TouchableOpacity } from "react-native";
 import { Checkbox } from "react-native-paper";
-import { sizes } from "../utils/sizes";
 
 // list is in format {value: label}. checkedList is a list that only stores values.
 export const Checklist = ({
@@ -38,7 +37,7 @@ const styles = {
   },
   label: {
     fontFamily: "Gabarito",
-    fontSize: sizes.mdb
+    fontSize: 20
   }
 }
 

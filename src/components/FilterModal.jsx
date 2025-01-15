@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { Button, Icon, List, Modal, Portal, PaperProvider } from "react-native-paper";
 import { colors } from "../utils/colors";
-import { sizes } from "../utils/sizes";
 import { Checklist } from "./Checklist";
 import { HeaderText } from "./HeaderText";
 import { NumberRange } from "./NumberRange";
@@ -79,7 +78,7 @@ export const FilterModal = ({
           onPress={() => setShowFilter(false)}
         >
           <View style={styles.closeModalButtonInside}>
-            <Icon source="close" size={sizes.mdb} color={colors.white} />
+            <Icon source="close" size="20" color={colors.white} />
             <Text style={styles.closeModalButtonText}>Close Filters</Text>
           </View>
         </Button>
@@ -97,7 +96,7 @@ const styles = StyleSheet.create({
   },
   closeModalButtonText: {
     fontFamily: "Gabarito",
-    fontSize: sizes.mdb,
+    fontSize: 20,
     color: colors.white
   },
   filterTypeButton: {
@@ -105,11 +104,11 @@ const styles = StyleSheet.create({
     marginBottom: 5
   },
   modal: {
-    height: sizes.hge,
-    padding: sizes.smb,
+    height: 580,
+    padding: 8,
     backgroundColor: colors.white,
-    marginHorizontal: sizes.mda,
-    borderRadius: sizes.mdb,
+    marginHorizontal: 16,
+    borderRadius: 20,
     justifyContent: "space-between",
   },
 })

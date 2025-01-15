@@ -3,7 +3,6 @@ import { StyleSheet, Text, View } from "react-native";
 import OutsidePressHandler from "react-native-outside-press";
 import { TextInput } from "react-native-paper";
 import { colors } from "../utils/colors";
-import { sizes } from "../utils/sizes";
 import { NumberRangeInput } from "./NumberRangeInput";
 
 export const NumberRange = ({
@@ -121,7 +120,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontFamily: "Gabarito",
-    fontSize: sizes.mdb
+    fontSize: 20
   }
 });
 

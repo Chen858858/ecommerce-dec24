@@ -1,7 +1,6 @@
-import React from 'react';
-import { View, Text } from 'react-native';
-import { sizes } from '../utils/sizes';
-import FontText from './FontText';
+import React from "react";
+import { View, Text } from "react-native";
+import FontText from "./FontText";
 
 export const HeaderText = ({
   children,
@@ -12,14 +11,14 @@ export const HeaderText = ({
   isItalics = false
 }) => {
   const sizeConvert = {
-    1: sizes.xla,
-    2: sizes.lgd,
-    3: sizes.lgb,
-    4: sizes.lga,
-    5: sizes.mde,
-    6: sizes.mdd,
-    7: sizes.mdc,
-    8: sizes.mdb
+    1: 60,
+    2: 48,
+    3: 40,
+    4: 36,
+    5: 32,
+    6: 28,
+    7: 24,
+    8: 20
   }
   
   return (

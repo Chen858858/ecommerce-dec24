@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { Icon, TextInput } from "react-native-paper";
 import { colors } from "../utils/colors";
-import { sizes } from "../utils/sizes";
 
 export const NumberRangeInput = ({
   label,
@@ -29,7 +28,7 @@ export const NumberRangeInput = ({
     input: {
       width: inputWidth,
       fontFamily: "Gabarito",
-      fontSize: sizes.mdb
+      fontSize: 20
     },
     inputContainer: {
       width: 150,
@@ -41,7 +40,7 @@ export const NumberRangeInput = ({
 
   return (
     <View style={styles.inputContainer}>
-      <Icon source={leftIcon} size={sizes.mdd} />
+      <Icon source={leftIcon} size="28" />
       <TextInput
         mode="outlined"
         style={styles.input}
@@ -50,7 +49,7 @@ export const NumberRangeInput = ({
         value={value}
         onChangeText={valueText => setValue(valueText)}
       />
-      <Icon source={rightIcon} size={sizes.mdd} />
+      <Icon source={rightIcon} size="28" />
     </View>
     
   )

@@ -1,7 +1,6 @@
 import React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 import { Card } from "react-native-paper";
-import { sizes } from "../utils/sizes";
 import { HeaderText } from "./HeaderText";
 import { StarRating } from "./StarRating";
 
@@ -23,7 +22,7 @@ const styles = StyleSheet.create({
   searchItemContainer: {
     width: 185,
     height: 350,
-    padding: sizes.sma
+    padding: 4
   }
 });
 

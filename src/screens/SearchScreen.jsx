@@ -3,7 +3,6 @@ import { ScrollView, StyleSheet, View, Text } from "react-native";
 import { Button, Icon, IconButton, Provider, Searchbar } from "react-native-paper";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { colors } from "../utils/colors";
-import { sizes } from "../utils/sizes";
 import { FilterModal } from "../components/FilterModal";
 import { SearchItem } from "../components/SearchItem";
 
@@ -30,7 +29,7 @@ export const SearchScreen = ({
           <Searchbar
             value={searchTerm}
             placeholder="Search for items..."
-            style={{height: sizes.xla}}
+            style={{height: 60}}
             inputStyle={{fontFamily: "Gabarito"}}
             onChangeText={valueText => setSearchTerm(valueText)}
           />
@@ -50,7 +49,7 @@ export const SearchScreen = ({
         onPress={() => filterItems()}
       >
         <View style={styles.searchButtonInside}>
-          <Icon source="magnify" size={sizes.mdb} color={colors.white} />
+          <Icon source="magnify" size="20" color={colors.white} />
           <Text style={styles.searchButtonText}>Search</Text>
         </View>
       </Button>
@@ -78,12 +77,12 @@ export const SearchScreen = ({
 
 const styles = StyleSheet.create({
   container: {
-    padding: sizes.smb,
-    paddingTop: sizes.mda,
+    padding: 8,
+    paddingTop: 16,
   },
   openFilterButton: {
-    width: sizes.lgf,
-    height: sizes.lgf
+    width: 56,
+    height: 56
   },
   searchButtonInside: {
     width: 100,
@@ -93,7 +92,7 @@ const styles = StyleSheet.create({
   },
   searchButtonText: {
     fontFamily: "Gabarito",
-    fontSize: sizes.mdb,
+    fontSize: 20,
     color: colors.white
   },
   searchContainer: {
@@ -108,7 +107,7 @@ const styles = StyleSheet.create({
     flexWrap: "wrap"
   },
   searchItemsContainerOutside: {
-    marginTop: sizes.smc
+    marginTop: 12
   }
 });
 
