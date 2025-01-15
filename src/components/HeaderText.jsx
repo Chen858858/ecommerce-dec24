@@ -27,11 +27,11 @@ export const HeaderText = ({
       <FontText>
         <Text
           style={{
-          fontSize: sizeConvert[size],
-          color: color,
-          fontWeight: isBold ? "bold": "normal",
-          textDecorationLine: isUnderlined ? "underline": "none",
-          fontStyle: isItalics ? "italic": "normal"
+            fontSize: sizeConvert[size],
+            color: color,
+            fontWeight: isBold ? "bold": "normal",
+            textDecorationLine: isUnderlined ? "underline": "none",
+            fontStyle: isItalics ? "italic": "normal"
         }}>
           {children}
         </Text>

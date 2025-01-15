@@ -4,7 +4,8 @@ import { Icon } from "react-native-paper";
 import { colors } from "../utils/colors";
 
 export const StarRating = ({
-  rating = 0
+  rating = 0,
+  textSize = 16
 }) => {
   
   const [wholeStars, setWholeStars] = useState(0);
@@ -21,29 +22,33 @@ export const StarRating = ({
     generateStars();
   }, [rating]);
 
+  const styles = StyleSheet.create({
+    ratingContainer: {
+      flexDirection: "row",
+      alignItems: "center"
+    },
+    ratingText: {
+      fontFamily: "Gabarito",
+      fontSize: textSize
+    }
+  });
+
   return (<View style={styles.ratingContainer}>
     <Text>
       {
-        [...Array(wholeStars)].map((_, index) => <Icon source="star" color={colors.gold} key={index} />)
+        [...Array(wholeStars)].map((_, index) => <Icon source="star" color={colors.gold} size={textSize} key={index} />)
       }
       {
-        halfStar == 1 && <Icon source="star-half-full" color={colors.gold} />
+        halfStar == 1 && <Icon source="star-half-full" color={colors.gold} size={textSize} />
       }
       {
-        [...Array(emptyStars)].map((_, index) => <Icon source="star-outline" color={colors.gold} key={index} />)
+        [...Array(emptyStars)].map((_, index) => <Icon source="star-outline" color={colors.gold} size={textSize} key={index} />)
       }
     </Text>
-    <Text>
+    <Text style={styles.ratingText}>
       ({rating})
     </Text>
   </View>);
 };
-
-const styles = StyleSheet.create({
-  ratingContainer: {
-    flexDirection: "row",
-    alignItems: "center"
-  }
-});
 
 export default StarRating;
