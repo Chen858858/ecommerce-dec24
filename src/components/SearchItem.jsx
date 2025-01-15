@@ -6,22 +6,34 @@ import { StarRating } from "./StarRating";
 
 export const SearchItem = ({ item }) => {
   return (
-    <Card style={styles.searchItemContainer}>
-      <Image source={{uri: item["thumbnail"]}} style={{height: 180, resizeMode: "contain"}} />
-      <HeaderText size="8">{item["title"]}</HeaderText>
-      <View>
-        <StarRating rating={item["rating"]} />
+    <Card contentStyle={styles.searchItemContainer}>
+      <Image source={{uri: item["thumbnail"]}} style={styles.image} />
+      <View style={styles.textContainer}>
+        <HeaderText size="8">{item["title"]}</HeaderText>
+        <View>
+          <StarRating rating={item["rating"]} />
+        </View>
+        <Text>Category: {item["category"]}</Text>
+        <Text>Price: {item["price"]}</Text>
       </View>
-      <Text>Category: {item["category"]}</Text>
-      <Text>Price: {item["price"]}</Text>
     </Card>
   );
 };
 
 const styles = StyleSheet.create({
+  image: {
+    width: 150,
+    height: 150,
+    resizeMode: "contain"
+  },
   searchItemContainer: {
     height: 350,
-    padding: 4
+    padding: 4,
+    flexDirection: "row",
+    justifyContent: "space-around"
+  },
+  textContainer: {
+    width: 210
   }
 });
 
