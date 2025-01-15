@@ -102,9 +102,7 @@ const styles = StyleSheet.create({
     marginBottom: 5
   },
   searchItemsContainerInside: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    flexWrap: "wrap"
+    flexDirection: "column"
   },
   searchItemsContainerOutside: {
     marginTop: 12

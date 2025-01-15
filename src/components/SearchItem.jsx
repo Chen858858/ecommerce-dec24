@@ -20,7 +20,6 @@ export const SearchItem = ({ item }) => {
 
 const styles = StyleSheet.create({
   searchItemContainer: {
-    width: 185,
     height: 350,
     padding: 4
   }
