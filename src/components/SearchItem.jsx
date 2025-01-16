@@ -11,10 +11,13 @@ export const SearchItem = ({ item }) => {
       <View style={styles.textContainer}>
         <HeaderText size="8">{item["title"]}</HeaderText>
         <View>
-          <StarRating rating={item["rating"]} />
+          <StarRating rating={item["rating"]} textSize="16" />
+        </View>
+        <View style={styles.priceContainer}>
+          <Text style={styles.priceDollars}>${Math.floor(item["price"])}</Text>
+          <Text style={styles.priceCents}>.{Math.round((item["price"] - Math.floor(item["price"])) * 100)}</Text>
         </View>
         <Text>Category: {item["category"]}</Text>
-        <Text>Price: {item["price"]}</Text>
       </View>
     </Card>
   );
@@ -25,6 +28,18 @@ const styles = StyleSheet.create({
     width: 150,
     height: 150,
     resizeMode: "contain"
+  },
+  priceDollars: {
+    fontFamily: "Gabarito",
+    fontSize: 32
+  },
+  priceCents: {
+    fontFamily: "Gabarito",
+    fontSize: 20
+  },
+  priceContainer: {
+    flexDirection: "row",
+    alignItems: "center"
   },
   searchItemContainer: {
     height: 350,
