@@ -18,7 +18,7 @@ export const SearchItem = ({ item }) => {
           <Text style={styles.priceDollars}>${Math.floor(item["price"])}</Text>
           <Text style={styles.priceCents}>.{Math.round((item["price"] - Math.floor(item["price"])) * 100)}</Text>
         </View>
-        <CategoryTag category={item["category"]} />
+        <CategoryTag category={item["category"]} textSize="14" />
       </View>
     </Card>
   );
