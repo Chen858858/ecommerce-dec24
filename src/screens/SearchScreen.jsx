@@ -45,7 +45,7 @@ export const SearchScreen = ({
       </View>
       <Button
         mode="contained"
-        buttonColor={colors.purpleOne}
+        buttonColor={colors.purpura}
         onPress={() => filterItems()}
       >
         <View style={styles.searchButtonInside}>

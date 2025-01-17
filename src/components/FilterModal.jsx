@@ -27,7 +27,7 @@ export const FilterModal = ({
         contentContainerStyle={styles.modal}
         onDismiss={() => setShowFilter(false)}
       >
-        <List.Section style={{flex: 0.95}} title={<HeaderText size={5} color={colors.purpleTwo}>Filters</HeaderText>}>
+        <List.Section style={{flex: 0.95}} title={<HeaderText size={5} color={colors.roxa}>Filters</HeaderText>}>
           <ScrollView>
             {/* Start filter by categories section. */}
             <List.Accordion
@@ -35,7 +35,7 @@ export const FilterModal = ({
               expanded={filterTypesOpen["categories"]}
               title={<HeaderText
                 size={6}
-                color={colors.purpleTwo}>
+                color={colors.roxa}>
                   Categories
                 </HeaderText>
               }
@@ -54,7 +54,7 @@ export const FilterModal = ({
               expanded={filterTypesOpen["price"]}
               title={<HeaderText
                 size={6}
-                color={colors.purpleTwo}>
+                color={colors.roxa}>
                   Price range
                 </HeaderText>
               }
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
     color: colors.white
   },
   filterTypeButton: {
-    backgroundColor: colors.purpleThree,
+    backgroundColor: colors.violett,
     marginBottom: 5
   },
   modal: {
