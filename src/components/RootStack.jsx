@@ -6,6 +6,7 @@ import { View, Text } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { SearchScreen } from "../screens/SearchScreen";
+import { ItemInformationScreen } from "../screens/ItemInformationScreen";
 import { colors } from "../utils/colors";
 import { PaperProvider } from "react-native-paper";
 import { useFonts } from "expo-font";
@@ -81,6 +82,10 @@ export function RootStack({
             setPriceRange={setPriceRange}
             setFilterTypesOpen={setFilterTypesOpen}
           />}
+      />
+      <Stack.Screen
+        name="Item information"
+        component={ItemInformationScreen}
       />
     </Stack.Navigator>
   );
