@@ -1,4 +1,5 @@
 import React from "react";
+import { createStaticNavigation, useNavigation } from "@react-navigation/native";
 import { Image, StyleSheet, Text, View } from "react-native";
 import { Button, Card, Icon } from "react-native-paper";
 import { HeaderText } from "./HeaderText";
@@ -7,8 +8,13 @@ import { StarRating } from "./StarRating";
 import { colors } from "../utils/colors";
 
 export const SearchItem = ({ item }) => {
+  const navigation = useNavigation();
+
   return (
-    <Card contentStyle={styles.searchItemContainer}>
+    <Card
+      contentStyle={styles.searchItemContainer}
+      onPress={() => navigation.navigate("Item information")}
+    >
       <View style={styles.searchItemInformationContainer} >
         <Image source={{uri: item["thumbnail"]}} style={styles.image} />
         <View style={styles.textContainer}>
