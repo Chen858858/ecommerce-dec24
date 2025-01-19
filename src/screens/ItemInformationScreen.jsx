@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text } from "react-native";
+import { HeaderText } from "../components/HeaderText";
 
 export const ItemInformationScreen = ({ route, items }) => {
   const { itemId } = route.params;
@@ -9,7 +10,7 @@ export const ItemInformationScreen = ({ route, items }) => {
 
   return (
     <View>
-      <Text>{itemInformation["title"]}</Text>
+      <HeaderText size="3">{itemInformation["title"]}</HeaderText>
     </View>
   );
 };
