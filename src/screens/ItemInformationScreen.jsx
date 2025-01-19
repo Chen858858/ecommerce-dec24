@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { HeaderText } from "../components/HeaderText";
 
 export const ItemInformationScreen = ({ route, items }) => {
@@ -9,10 +9,17 @@ export const ItemInformationScreen = ({ route, items }) => {
   )[0];
 
   return (
-    <View>
+    <ScrollView style={styles.itemInformationContainer}>
       <HeaderText size="3">{itemInformation["title"]}</HeaderText>
-    </View>
+    </ScrollView>
   );
 };
+
+const styles = StyleSheet.create({
+  itemInformationContainer: {
+    marginHorizontal: 10,
+    marginVertical: 15
+  }
+});
 
 export default ItemInformationScreen;
