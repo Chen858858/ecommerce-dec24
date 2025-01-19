@@ -17,6 +17,7 @@ SplashScreen.preventAutoHideAsync();
 const Stack = createNativeStackNavigator();
 
 export function RootStack({
+  items,
   filteredItems,
   searchPage,
   categories,
@@ -84,8 +85,15 @@ export function RootStack({
           />}
       />
       <Stack.Screen
-        name="Item information"
-        component={ItemInformationScreen}
+        name="ItemInformation"
+        options={{
+          title: "Item information"
+        }}
+        children={(props) =>
+          <ItemInformationScreen {...props}
+            items={items}
+          />
+        }
       />
     </Stack.Navigator>
   );

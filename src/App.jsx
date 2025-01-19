@@ -125,6 +125,7 @@ export default function App() {
     <EventProvider>
       <NavigationContainer>
         <RootStack
+          items={items}
           filteredItems={filteredItems}
           searchPage={searchPage}
           searchTerm={searchTerm}

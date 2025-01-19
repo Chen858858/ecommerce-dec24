@@ -13,7 +13,7 @@ export const SearchItem = ({ item }) => {
   return (
     <Card
       contentStyle={styles.searchItemContainer}
-      onPress={() => navigation.navigate("Item information")}
+      onPress={() => navigation.navigate("ItemInformation", {itemId: item["id"]})}
     >
       <View style={styles.searchItemInformationContainer} >
         <Image source={{uri: item["thumbnail"]}} style={styles.image} />
